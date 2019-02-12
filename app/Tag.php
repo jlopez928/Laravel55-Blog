@@ -7,4 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     //
+    protected $fillable = [
+        'name', 'slug', 'body'
+    ];
+
+    //Relacion con el modelo Post
+    public function posts() {
+
+        return $this->belongsToMany(Post::class);
+
+    }
 }
