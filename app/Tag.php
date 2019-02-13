@@ -8,7 +8,7 @@ class Tag extends Model
 {
     //
     protected $fillable = [
-        'name', 'slug', 'body'
+        'name', 'slug'
     ];
 
     //Relacion con el modelo Post
