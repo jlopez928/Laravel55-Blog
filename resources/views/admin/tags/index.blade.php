@@ -32,7 +32,12 @@
                                         <a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-sm btn-warning"> editar </a>
                                     </td>
                                     <td width="10px">
-                                       Eliminar
+                                       
+                                       {!! Form::open(['route' => ['tags.destroy', $tag->id], 'method' => 'DELETE']) !!}
+                                            <button class="btn btn-sm btn-danger"> eliminar </button>
+                                       {!! Form::close() !!}
+                                       
+                                       
                                     </td>
                                 </tr>
                             @endforeach
