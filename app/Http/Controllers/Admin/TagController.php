@@ -77,7 +77,7 @@ class TagController extends Controller
         //
         $tag = Tag::find($id);
 
-        return view('admin.tag.show', compact('tag'));
+        return view('admin.tags.show', compact('tag'));
 
     }
 
@@ -92,7 +92,7 @@ class TagController extends Controller
         //
         $tag = Tag::find($id);
 
-        return view('admin.tag.edit', compact('tag'));
+        return view('admin.tags.edit', compact('tag'));
 
     }
 
