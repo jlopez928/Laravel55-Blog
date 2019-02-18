@@ -23,10 +23,12 @@ class TagUpdateRequest extends FormRequest
      */
     public function rules()
     {
+        //dd($this->tag);
         return [
             //Validacion de los Campos
             'name' => 'required',
-            'slug' => 'required|unique:tags,slug,' . $this->tag,
+            //valida el unique slug en todos menos en el ID actual
+            'slug' => 'required|unique:tags,slug,' . $this->tag, 
         ];
     }
 }
