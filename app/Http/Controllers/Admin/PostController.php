@@ -105,6 +105,9 @@ class PostController extends Controller
         //
         $post = Post::find($id);
 
+        //Aplicar las politicas de acceso al usuario
+        $this->authorize('pass', $post);
+
         return view('admin.posts.show', compact('post'));
 
     }
@@ -117,15 +120,18 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+        //
+        $post = Post::find($id);
+
+        //Aplicar las politicas de acceso al usuario
+        $this->authorize('pass', $post);
+
         //Listar categorias
         $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
         
         //Listar etiquetas
         $tags = Tag::orderBy('name', 'ASC')->get();
         
-        //
-        $post = Post::find($id);
-
         return view('admin.posts.edit', compact('post', 'categories', 'tags'));
 
     }
@@ -141,6 +147,10 @@ class PostController extends Controller
     {
         //
         $post = Post::find($id);
+
+        //Aplicar las politicas de acceso al usuario
+        $this->authorize('pass', $post);
+
         $post->fill($request->all())->save();
 
         //Guardar Imagen
@@ -167,10 +177,14 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
-        //$post = Post::find($id);
-        //$post->delete();
+        $post = Post::find($id);
+        
+        //Aplicar las politicas de acceso al usuario
+        $this->authorize('pass', $post);
+        
+        $post->delete();
 
-        Post::find($id)->delete();
+        //Post::find($id)->delete();
 
         return back()->with('info', 'Post eliminado con éxito');
 

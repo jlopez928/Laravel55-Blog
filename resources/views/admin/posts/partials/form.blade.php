@@ -26,18 +26,18 @@
     </label>
 </div>
 <div class="form-group">
-        {!! Form::label('tags', 'Etiquetas') !!}
-        <div>
-            @foreach ($tags as $tag)
-                <label>
-                    {!! Form::checkbox('tags[]', $tag->id) !!} {{ $tag->name }}
-                </label>
-            @endforeach
-        </div>
+    {!! Form::label('tags', 'Etiquetas') !!}
+    <div>
+        @foreach ($tags as $tag)
+            <label>
+                {!! Form::checkbox('tags[]', $tag->id) !!} {{ $tag->name }}
+            </label>
+        @endforeach
+    </div>
 </div>
 <div class="form-group">
-        {!! Form::label('excerpt', 'Extracto') !!}
-        {!! Form::textarea('excerpt', null, ['class' => 'form-control', 'rows' => '2']) !!}
+    {!! Form::label('excerpt', 'Extracto') !!}
+    {!! Form::textarea('excerpt', null, ['class' => 'form-control', 'rows' => '2']) !!}
 </div>
 <div class="form-group">
     {!! Form::label('body', 'Descripcion') !!}
