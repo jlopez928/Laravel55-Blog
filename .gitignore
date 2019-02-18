@@ -3,6 +3,7 @@
 /public/vendor/ckeditor
 /public/vendor/stringToSlug
 /public/storage
+/public/image
 /storage/*.key
 /vendor
 /.idea
